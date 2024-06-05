@@ -1,0 +1,130 @@
+html {
+    background-color: #0E141B;
+}
+
+#difficulty-select {
+    background-color: #1E1F20;
+    color: #FFFFFF;
+    font-family: 'Verdana', sans-serif;
+    max-width: fit-content;
+    margin-inline: auto;
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas:
+        "flags-title countries-title"
+        "flags-easy countries-easy"
+        "flags-medium countries-medium"
+        "flags-hard countries-hard"
+        "flags-insane flags-insane";
+    gap: 3px 10px;
+}
+
+#difficulty-select button {
+    padding: 15px 80px;
+    background-color: lightblue;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#flags-title {
+    grid-area: flags-title;
+    color: #FFFFFF;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+}
+#countries-title {
+    grid-area: countries-title;
+    color: #FFFFFF;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+}
+#flags-easy {
+    grid-area: flags-easy;
+}
+#flags-medium {
+    grid-area: flags-medium;
+}
+#flags-hard {
+    grid-area: flags-hard;
+}
+#countries-easy {
+    grid-area: countries-easy;
+}
+#countries-medium {
+    grid-area: countries-medium;
+}
+#countries-hard {
+    grid-area: countries-hard;
+}
+#flags-insane {
+    grid-area: flags-insane;
+    width: 100%;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category h2 {
+    grid-area: flags-title;
+    color: #FFFFFF;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+}
+
+div#difficulty-select #flags-easy:hover, div#difficulty-select #countries-easy:hover {
+    background-color: lightgreen;
+}
+
+div#difficulty-select #flags-medium:hover, div#difficulty-select #countries-medium:hover {
+    background-color: #fcf342;
+}
+
+div#difficulty-select #flags-hard:hover, div#difficulty-select #countries-hard:hover {
+    background-color: lightcoral;
+}
+
+div#difficulty-select #flags-insane:hover {
+    background-color: red;
+}
+
+
+
+.game_container {
+    background-color: #1E1F20;
+    color: #FFFFFF;
+    font-family: 'Verdana', sans-serif;
+}
+
+@media (max-width: 768px) {
+    #difficulty-select {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "flags-title"
+            "flags-easy"
+            "flags-medium"
+            "flags-hard"
+            "countries-title"
+            "countries-easy"
+            "countries-medium"
+            "countries-hard"
+            "flags-insane";
+    }
+
+    #flags-insane {
+        grid-column: 1;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .difficulty-select button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
