@@ -15,3 +15,5 @@
 //   width="160"
 //   height="120"
 //   alt="Ukraine">
+
+// palestine and vatican city need an asterisk

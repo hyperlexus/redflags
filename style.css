@@ -93,13 +93,12 @@ div#difficulty-select #flags-insane:hover {
     background-color: red;
 }
 
-
-
 .game_container {
     background-color: #1E1F20;
     color: #FFFFFF;
     font-family: 'Verdana', sans-serif;
 }
+
 
 @media (max-width: 768px) {
     #difficulty-select {
