@@ -25,10 +25,10 @@ html {
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-template-areas:
-        "flags-title countries-title"
-        "flags-easy countries-easy"
-        "flags-medium countries-medium"
-        "flags-hard countries-hard"
+        "flags-title japanese-title"
+        "flags-easy japanese-easy"
+        "flags-medium japanese-medium"
+        "flags-hard japanese-hard"
         "flags-insane flags-insane";
     gap: 3px 10px;
 }
@@ -48,8 +48,8 @@ html {
     font-family: 'Verdana', sans-serif;
     text-align: center;
 }
-#countries-title {
-    grid-area: countries-title;
+#japanese-title {
+    grid-area: japanese-title;
     color: #FFFFFF;
     font-family: 'Verdana', sans-serif;
     text-align: center;
@@ -63,14 +63,14 @@ html {
 #flags-hard {
     grid-area: flags-hard;
 }
-#countries-easy {
-    grid-area: countries-easy;
+#japanese-easy {
+    grid-area: japanese-easy;
 }
-#countries-medium {
-    grid-area: countries-medium;
+#japanese-medium {
+    grid-area: japanese-medium;
 }
-#countries-hard {
-    grid-area: countries-hard;
+#japanese-hard {
+    grid-area: japanese-hard;
 }
 #flags-insane {
     grid-area: flags-insane;
@@ -90,13 +90,13 @@ html {
     text-align: center;
 }
 
-div#difficulty-select #flags-easy:hover, div#difficulty-select #countries-easy:hover {
+div#difficulty-select #flags-easy:hover, div#difficulty-select #japanese-easy:hover {
     background-color: lightgreen;
 }
-div#difficulty-select #flags-medium:hover, div#difficulty-select #countries-medium:hover {
+div#difficulty-select #flags-medium:hover, div#difficulty-select #japanese-medium:hover {
     background-color: #fcf342;
 }
-div#difficulty-select #flags-hard:hover, div#difficulty-select #countries-hard:hover {
+div#difficulty-select #flags-hard:hover, div#difficulty-select #japanese-hard:hover {
     background-color: lightcoral;
 }
 div#difficulty-select #flags-insane:hover {
@@ -157,10 +157,10 @@ div#difficulty-select #flags-insane:hover {
             "flags-easy"
             "flags-medium"
             "flags-hard"
-            "countries-title"
-            "countries-easy"
-            "countries-medium"
-            "countries-hard"
+            "japanese-title"
+            "japanese-easy"
+            "japanese-medium"
+            "japanese-hard"
             "flags-insane";
     }
 
