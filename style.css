@@ -2,6 +2,19 @@ html {
     background-color: #0E141B;
 }
 
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.centered-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #difficulty-select {
     background-color: #1E1F20;
     color: #FFFFFF;
@@ -64,13 +77,13 @@ html {
     width: 100%;
 }
 
-.category {
+.game-category {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.category h2 {
+.game-category h2 {
     grid-area: flags-title;
     color: #FFFFFF;
     font-family: 'Verdana', sans-serif;
@@ -80,25 +93,61 @@ html {
 div#difficulty-select #flags-easy:hover, div#difficulty-select #countries-easy:hover {
     background-color: lightgreen;
 }
-
 div#difficulty-select #flags-medium:hover, div#difficulty-select #countries-medium:hover {
     background-color: #fcf342;
 }
-
 div#difficulty-select #flags-hard:hover, div#difficulty-select #countries-hard:hover {
     background-color: lightcoral;
 }
-
 div#difficulty-select #flags-insane:hover {
     background-color: red;
 }
 
-.game_container {
-    background-color: #1E1F20;
+
+.game-container {
+    background-color: #0e141b;
     color: #FFFFFF;
     font-family: 'Verdana', sans-serif;
 }
 
+.game-container button {
+    padding: 15px 80px;
+    margin: 10px;
+    background-color: lightblue;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+
+.game-container button:hover{
+    background-color: #fcf342;
+}
+
+#flag-next {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#flag-next button {
+    background-color: aliceblue;
+}
+
+#flag-next button:hover {
+    background-color: #8848ff;
+    color: white;
+}
+
+#flag-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#flag-answer {
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     #difficulty-select {
@@ -117,6 +166,9 @@ div#difficulty-select #flags-insane:hover {
 
     #flags-insane {
         grid-column: 1;
+    }
+    .game-container button {
+        width: 100%;
     }
 }
 
