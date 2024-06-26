@@ -99,10 +99,22 @@ div#difficulty-select #flags-medium:hover, div#difficulty-select #japanese-mediu
 div#difficulty-select #flags-hard:hover, div#difficulty-select #japanese-hard:hover {
     background-color: lightcoral;
 }
-div#difficulty-select #flags-insane:hover {
+div#difficulty-select #flags-insane:hover, div#difficulty-select #japanese-insane:hover {
     background-color: red;
 }
 
+/*/ div#flag-input a:link, div#flag-input a:hover, div#flag-input a:visited, div#flag-input a:active { /*/
+.flagGame-title {
+    display: block;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Verdana', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 .game-container {
     background-color: #0e141b;
@@ -143,6 +155,25 @@ div#difficulty-select #flags-insane:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+#flag-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#country-dropdown {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: lightblue;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    width: 20%;
 }
 
 #flag-answer {
