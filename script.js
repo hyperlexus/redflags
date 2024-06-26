@@ -42,8 +42,6 @@ async function getRandomCountryCodes(n) {
         }
     }
 
-    firstCountryCode = "ro";
-    countryNames[0] = "Romania";
     return { firstCountryCode, countryNames };
 }
 
