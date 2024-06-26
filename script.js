@@ -19,7 +19,7 @@ const difficultySelectDiv = document.getElementById('difficulty-select');
 const flagGameDiv = document.getElementById('flag-box');
 const flagTitleDiv = document.getElementById('flag-title');
 const flagImageDiv = document.getElementById('flag-image');
-const flagGameOptions = document.getElementById('flag-options');
+const flagOptionsDiv = document.getElementById('flag-options');
 const flagAnswerDiv = document.getElementById('flag-answer');
 const nextButtonDiv = document.getElementById('flag-next');
 
@@ -49,6 +49,16 @@ async function getRandomCountryCodes(n) {
     return { firstCountryCode, countryNames };
 }
 
+function renderTitle(mode, difficulty) {
+    let title = document.createElement('h1');
+    title.innerText = `${mode} - ${difficulty}`;
+    title.className = 'centered';
+    title.style.fontSize = '1rem';
+    flagTitleDiv.appendChild(title);
+}
+
+
+// inserts the image of the target flag
 function renderFlag(code, countryName) {
     let flag = document.createElement('img');
     flag.src = `https://flagcdn.com/w320/${code}.png`;
@@ -59,6 +69,8 @@ function renderFlag(code, countryName) {
     flagImageDiv.appendChild(flag);
 }
 
+
+// called for easy and medium mode
 function renderOptionButtons(countryNames, correctCountry) {
     const shuffledCountryNames = countryNames.sort(() => Math.random() - 0.5);
     const optionButtons = [];
@@ -92,26 +104,25 @@ function renderOptionButtons(countryNames, correctCountry) {
             document.getElementById('next-button').style.display = 'block';
         });
 
-        flagGameOptions.appendChild(optionButton);
+        flagOptionsDiv.appendChild(optionButton);
         optionButtons.push(optionButton);
     });
+}
+function renderDropdown(correctCountry) {
+    
 }
 
 async function flagGame(difficulty) {
     flagTitleDiv.innerHTML = '';
     flagImageDiv.innerHTML = '';
-    flagGameOptions.innerHTML = '';
+    flagOptionsDiv.innerHTML = '';
     flagAnswerDiv.innerHTML = '';
     nextButtonDiv.innerHTML = '';
 
     difficultySelectDiv.style.display = 'none';
     flagGameDiv.style.display = '';
 
-    let title = document.createElement('h1');
-    title.innerText = `Flags - ${difficulty}`;
-    title.className = 'centered';
-    title.style.fontSize = '1rem';
-    flagTitleDiv.appendChild(title);
+    renderTitle("Flags", difficulty);
 
     let amount_options;
     if (difficulty === 'easy') {
@@ -126,7 +137,11 @@ async function flagGame(difficulty) {
     let correctCountry = countryNames[0];
 
     renderFlag(firstCountryCode, correctCountry);
-    renderOptionButtons(countryNames, correctCountry);
+    if (difficulty === "easy" || difficulty === "medium") {
+        renderOptionButtons(countryNames, correctCountry);
+    } else if (difficulty === "hard") {
+        renderDropdown(correctCountry);
+    }
 
     let nextButton = document.createElement('button');
     nextButton.innerText = 'Next';
